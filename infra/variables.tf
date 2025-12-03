@@ -4,8 +4,8 @@ variable "suscription_id" {
 }
 
 variable "location" {
-  default     = "Brazil South"
-  description = "Región de Azure donde se crearán los recursos. Brazil South es la región más cercana con tier gratuito disponible"
+  default     = "East US"
+  description = "Región de Azure donde se crearán los recursos. East US es una región estándar generalmente disponible"
 }
 
 variable "sqladmin_username" {
