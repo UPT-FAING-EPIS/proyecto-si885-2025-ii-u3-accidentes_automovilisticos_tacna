@@ -226,7 +226,8 @@ Durante la fase de levantamiento de información se identificaron las siguientes
 
 [b) Diagrama del Proceso Propuesto – Diagrama de actividades Inicial](#heading=h.7lj19pswwxxu)
 
-![][Diagrama del Proceso Propuesto](../media/Diagrama_del_Proceso_Propuesto.png)
+![Diagrama del Proceso Actual](../media/Diagrama_del_Proceso_Propuesto.png)
+
 
 [IV Especificacion de Requerimientos de Software](#heading=h.l35cjpfq0moy)	
 
@@ -421,22 +422,22 @@ Diagrama de Actividades con objetos del CUS Mapa interactivo
 
 c[) Diagrama de Secuencia](#heading=h.7lj19pswwxxu)
 
-D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Recolectar noticias locales
+Diagrama de Secuencia del CUS Recolectar noticias locales
 ![](../media/DSrecolectarnoticias.png)
 
-D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Almacenar datos estructurados
+Diagrama de Secuencia del CUS Almacenar datos estructurados
 
 ![](../media/DSalmacenardatos.png)
 
-D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Recuento de accidentes por ubicación
+Diagrama de Secuencia del CUS Recuento de accidentes por ubicación
 
 ![](../media/DSrecuentodeaccidentes.png)
 
-D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Gráfico de pie por medio de comunicación
+Diagrama de Secuencia del CUS Gráfico de pie por medio de comunicación
 
 ![](../media/DSgraficopie.png)
 
-D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Mapa interactivo
+Diagrama de Secuencia del CUS Mapa interactivo
 
 ![](../media/DSmapaintercativo.png)
 
