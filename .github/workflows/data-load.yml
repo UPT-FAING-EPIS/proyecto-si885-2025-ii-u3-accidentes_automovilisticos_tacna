@@ -1,0 +1,218 @@
+name: Load Data to Azure SQL Database - Incidentes Tacna
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'bd.sql'
+      - '.github/workflows/data-load.yml'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - development
+
+permissions:
+  contents: write
+
+jobs:
+  load-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install sqlcmd
+        run: |
+          curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+          curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+          sudo apt-get update
+          sudo ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev msodbcsql18
+          echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+          source ~/.bashrc
+
+      - name: Verify database connectivity
+        run: |
+            export PATH="$PATH:/opt/mssql-tools/bin"
+            echo "Testing connection to SQL Server..."
+            sqlcmd -S "${{ secrets.SQL_SERVER }}" -U "${{ secrets.SQL_USER }}" -P "${{ secrets.SQL_PASS }}" -d incidentestacna -Q "SELECT GETDATE() AS current_time, @@VERSION AS version;"
+
+      - name: Create database structure
+        run: |
+          export PATH="$PATH:/opt/mssql-tools/bin"
+          echo "Creating database structure for Incidentes Tacna..."
+          sqlcmd -S ${{ secrets.SQL_SERVER }} -U ${{ secrets.SQL_USER }} -P ${{ secrets.SQL_PASS }} -d incidentestacna -i bd.sql
+
+      - name: Verify tables creation
+        run: |
+          export PATH="$PATH:/opt/mssql-tools/bin"
+          echo "📊 Verifying tables..."
+          sqlcmd -S ${{ secrets.SQL_SERVER }} -U ${{ secrets.SQL_USER }} -P ${{ secrets.SQL_PASS }} -d incidentestacna -Q "
+          SELECT 
+              t.name AS tabla,
+              COUNT(c.column_id) AS num_columnas
+          FROM sys.tables t
+          LEFT JOIN sys.columns c ON t.object_id = c.object_id
+          GROUP BY t.name
+          ORDER BY t.name;
+          "
+
+      - name: Verify views and procedures
+        run: |
+          export PATH="$PATH:/opt/mssql-tools/bin"
+          echo "🔎 Checking views and stored procedures..."
+          sqlcmd -S ${{ secrets.SQL_SERVER }} -U ${{ secrets.SQL_USER }} -P ${{ secrets.SQL_PASS }} -d incidentestacna -Q "
+          SELECT name, type_desc 
+          FROM sys.objects 
+          WHERE type IN ('V', 'P')
+          ORDER BY type_desc, name;
+          "
+
+      - name: Generate statistics
+        run: |
+          export PATH="$PATH:/opt/mssql-tools/bin"
+          echo "📊 Generating database statistics..."
+          sqlcmd -S ${{ secrets.SQL_SERVER }} -U ${{ secrets.SQL_USER }} -P ${{ secrets.SQL_PASS }} -d incidentestacna -Q "
+          PRINT '📈 Estadísticas de la base de datos';
+          SELECT 'Medios registrados: ' + CAST(COUNT(*) AS VARCHAR(10)) AS estadistica FROM medios;
+          SELECT 'Noticias registradas: ' + CAST(COUNT(*) AS VARCHAR(10)) AS estadistica FROM noticias;
+          SELECT 'Accidentes registrados: ' + CAST(COUNT(*) AS VARCHAR(10)) AS estadistica FROM accidentes;
+          SELECT 'Palabras clave registradas: ' + CAST(COUNT(*) AS VARCHAR(10)) AS estadistica FROM keywords;
+          "
+
+      - name: Generate Database ER Diagram
+        run: |
+          mkdir -p diagrams
+          
+          cat > diagrams/database-er-diagram.md << 'EOF'
+          # Diagrama Entidad-Relación - Sistema Incidentes Tacna
+
+          ```mermaid
+          erDiagram
+              medios ||--o{ noticias : publica
+              noticias ||--o{ accidentes : reporta
+              noticias ||--o{ keywords : contiene
+              
+              medios {
+                  int id PK
+                  nvarchar nombre
+                  nvarchar tipo
+                  nvarchar region
+                  nvarchar url_principal
+              }
+              
+              noticias {
+                  int id PK
+                  nvarchar titulo
+                  nvarchar url
+                  nvarchar fuente
+                  nvarchar categoria
+                  date fecha_publicacion
+                  date fecha_extraccion
+                  nvarchar ciudad
+                  nvarchar sentimiento
+              }
+              
+              accidentes {
+                  int id PK
+                  int noticia_id FK
+                  date fecha_accidente
+                  nvarchar hora_aproximada
+                  nvarchar dia_semana
+                  nvarchar distrito
+                  nvarchar tipo_via
+                  nvarchar tipo_accidente
+                  nvarchar causa_probable
+                  int num_vehiculos_involucrados
+                  nvarchar tipo_vehiculo
+                  nvarchar condicion_clima
+                  int num_fallecidos
+                  int num_heridos
+                  nvarchar danos_materiales
+                  bit intervencion_bomberos
+                  nvarchar coordenadas
+                  int tiempo_publicacion
+              }
+              
+              keywords {
+                  int id PK
+                  int noticia_id FK
+                  nvarchar palabra_clave
+              }
+          ```
+          
+          ## Vistas y Procedimientos
+          - **vw_accidentes_por_distrito**
+          - **vw_noticias_accidentes**
+          - **vw_estadisticas_tipo_accidente**
+          - **sp_buscar_por_keyword**
+          - **sp_resumen_mensual**
+          EOF
+
+      - name: Generate BD.md with current data
+        run: |
+          export PATH="$PATH:/opt/mssql-tools/bin"
+          
+          cat > BD.md << 'EOF'
+          # Documentación de Base de Datos - Incidentes Tacna
+
+          ## 📊 Diagramas
+
+          ➡️ **[Diagrama ER Completo y Diccionario](diagrams/database-er-diagram.md)**
+
+          ## 🗄️ Tablas Principales
+          - **medios**
+          - **noticias**
+          - **accidentes**
+          - **keywords**
+
+          ### Estadísticas Actuales
+          EOF
+          
+          sqlcmd -S ${{ secrets.SQL_SERVER }} -U ${{ secrets.SQL_USER }} -P ${{ secrets.SQL_PASS }} -d incidentestacna -Q "
+          SELECT '- **Medios:** ' + CAST(COUNT(*) AS VARCHAR(10)) FROM medios
+          UNION ALL
+          SELECT '- **Noticias:** ' + CAST(COUNT(*) AS VARCHAR(10)) FROM noticias
+          UNION ALL
+          SELECT '- **Accidentes:** ' + CAST(COUNT(*) AS VARCHAR(10)) FROM accidentes
+          UNION ALL
+          SELECT '- **Keywords:** ' + CAST(COUNT(*) AS VARCHAR(10)) FROM keywords;
+          " -h -1 >> BD.md
+          
+          cat >> BD.md << 'EOF'
+
+          ## 🔍 Características
+          - ✅ Relaciones con claves foráneas (DELETE CASCADE)
+          - ✅ Índices optimizados
+          - ✅ Vistas analíticas
+          - ✅ Procedimientos almacenados listos para uso
+          - ✅ Compatible con Azure SQL Server
+
+          ## 🔧 Vistas y Procedimientos
+          | Tipo | Nombre |
+          |------|---------|
+          | Vista | vw_accidentes_por_distrito |
+          | Vista | vw_noticias_accidentes |
+          | Vista | vw_estadisticas_tipo_accidente |
+          | SP | sp_buscar_por_keyword |
+          | SP | sp_resumen_mensual |
+
+          ---
+          *Base de datos actualizada el $(date)* 
+          EOF
+
+      - name: Commit and push generated documentation
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action - Data Load"
+          git add diagrams/database-er-diagram.md BD.md
+          git commit -m "Auto-generate database diagrams - Incidentes Tacna [skip ci]" || echo "No changes to commit"
+          git push || echo "Nothing to push"
