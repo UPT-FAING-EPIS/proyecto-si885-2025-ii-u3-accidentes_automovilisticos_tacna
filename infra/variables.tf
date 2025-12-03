@@ -4,8 +4,8 @@ variable "suscription_id" {
 }
 
 variable "location" {
-  default     = "East US"
-  description = "Región de Azure donde se crearán los recursos. East US es una región estándar generalmente disponible"
+  default     = "East US 2"
+  description = "Región de Azure donde se crearán los recursos. East US 2 suele tener mayor disponibilidad"
 }
 
 variable "sqladmin_username" {
