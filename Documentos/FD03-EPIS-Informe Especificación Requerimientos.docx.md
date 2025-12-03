@@ -220,19 +220,17 @@ Durante la fase de levantamiento de información se identificaron las siguientes
 
 [III.  Análisis de Procesos](#heading=h.l35cjpfq0moy)	
 
-	[a) Diagrama del Proceso Actual – Diagrama de actividades](#heading=h.7lj19pswwxxu)
+[a) Diagrama del Proceso Actual – Diagrama de actividades](#heading=h.7lj19pswwxxu)
 
-	![Diagrama del Proceso Actual](media/Diagrama_del_Proceso_Actual.png)
+![Diagrama del Proceso Actual](../media/Diagrama_del_Proceso_Actual.png)
 
-![][image3]
+[b) Diagrama del Proceso Propuesto – Diagrama de actividades Inicial](#heading=h.7lj19pswwxxu)
 
-	[b) Diagrama del Proceso Propuesto – Diagrama de actividades Inicial](#heading=h.7lj19pswwxxu)
-
-	![][image4]
+![][Diagrama del Proceso Propuesto](../media/Diagrama_del_Proceso_Propuesto.png)
 
 [IV Especificacion de Requerimientos de Software](#heading=h.l35cjpfq0moy)	
 
-	[a) Cuadro de Requerimientos funcionales Inicial](#heading=h.7lj19pswwxxu)
+[a) Cuadro de Requerimientos funcionales Inicial](#heading=h.7lj19pswwxxu)
 
 | ID | Nombre del Requisito | Descripción de Requisito | Prioridad |
 | ----- | ----- | ----- | ----- |
@@ -289,17 +287,16 @@ Durante la fase de levantamiento de información se identificaron las siguientes
 * Analista: Es el encargado de extraer información, procesar métricas y generar reportes de análisis. Tiene acceso a los repositorios y puede visualizar estadísticas detalladas.  
 * Usuario Estándar: Es aquel que accede al sistema únicamente para consultar información general. Tiene permisos de visualización de reportes y métricas, pero no puede realizar modificaciones.
 
-	[2\. Modelo Conceptual](#heading=h.7lj19pswwxxu)	
+[2\. Modelo Conceptual](#heading=h.7lj19pswwxxu)	
 
-	[a) Diagrama de Paquetes](#heading=h.7lj19pswwxxu)
+[a) Diagrama de Paquetes](#heading=h.7lj19pswwxxu)
 
-	![][image5]
+![Diagrama de Paquetes](../media/diagramapaquetes.png)
 
-	[b) Diagrama de Casos de Uso](#heading=h.7lj19pswwxxu)
+[b) Diagrama de Casos de Uso](#heading=h.7lj19pswwxxu)
 
-	![][image6]
-
-	[c) Escenarios de Caso de Uso (narrativa)](#heading=h.7lj19pswwxxu)
+![Diagrama de Casos de Uso](../media/casosdeuso.png)
+[c) Escenarios de Caso de Uso (narrativa)](#heading=h.7lj19pswwxxu)
 
 	     RF-001 Recolectar noticias locales
 
@@ -382,71 +379,70 @@ RF05 – Mapa interactivo
 
 Diagrama de objetos del CUS Recolectar noticias locales
 
-![][image7]
+![Diagrama de objetos del CUS Recolectar noticias locales](../media/DOrecolectarnoticias.png)
 
 Diagrama de objetos del CUS Almacenar datos estructurados
 
-![][image8]
+![](../media/DOalmacenardatos.png)
 
 Diagrama de objetos del CUS Recuento de accidentes por ubicación
 
-![][image9]
+![](../media/DOrecuentoaccidentes.png)
 
 Diagrama de objetos del CUS Gráfico de pie por medio de comunicación
 
-![][image10]
+![](../media/DOgraficopie.png)
 
 Diagrama de objetos del CUS Mapa interactivo
 
-![][image11]
+![](../media/DOmapainteractivo.png)
 
-	b[) Diagrama de Actividades con objetos](#heading=h.7lj19pswwxxu)
+b[) Diagrama de Actividades con objetos](#heading=h.7lj19pswwxxu)
 
-	     Diagrama de Actividades con objetos del CUS Recolectar noticias locales
+Diagrama de Actividades con objetos del CUS Recolectar noticias locales
 
-![][image12]
+![](../media/DArecolectarnoticias.png)
 
 Diagrama de Actividades con objetos del CUS Almacenar datos estructurados
 
-![][image13]
+![](../media/DAalmacenardatos.png)
 
 Diagrama de Actividades con objetos del CUS Recuento de accidentes por ubicación
 
-![][image14]
+![](../media/DArecuentodeaccidentes.png)
 
 Diagrama de Actividades con objetos del CUS Gráfico de pie por medio de comunicación
 
-![][image15]
+![](../media/DAgarficopie.png)
 
 Diagrama de Actividades con objetos del CUS Mapa interactivo
 
-![][image16]
+![](../media/DAmapainteractivo.png)
 
-	c[) Diagrama de Secuencia](#heading=h.7lj19pswwxxu)
+c[) Diagrama de Secuencia](#heading=h.7lj19pswwxxu)
 
-	     D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Recolectar noticias locales
-
-	![][image17]
+D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Recolectar noticias locales
+![](../media/DSrecolectarnoticias.png)
 
 D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Almacenar datos estructurados
 
-![][image18]
+![](../media/DSalmacenardatos.png)
 
 D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Recuento de accidentes por ubicación
 
-![][image19]
+![](../media/DSrecuentodeaccidentes.png)
 
 D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Gráfico de pie por medio de comunicación
 
-![][image20]
+![](../media/DSgraficopie.png)
 
 D[iagrama de Secuencia](#heading=h.7lj19pswwxxu) del CUS Mapa interactivo
 
-	![][image21]
+![](../media/DSmapaintercativo.png)
 
-	d[) Diagrama de Clases](#heading=h.7lj19pswwxxu)
+d[) Diagrama de Clases](#heading=h.7lj19pswwxxu)
 
-		![][image22]
+![](../media/diagramaclases.png)
 
 [CONCLUSIONES](#heading=h.zhgktmo5hklg)
 
