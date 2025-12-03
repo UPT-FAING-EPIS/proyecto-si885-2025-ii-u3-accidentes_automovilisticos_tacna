@@ -5,7 +5,7 @@ provider "azurerm" {
 
 # Resource Group para la base de datos
 resource "azurerm_resource_group" "rg_db" {
-  name     = "upt-incidentes-tacna"
+  name     = "upt-incidentes-tacna-rg"
   location = var.location
 }
 
