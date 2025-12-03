@@ -221,6 +221,8 @@ Durante la fase de levantamiento de información se identificaron las siguientes
 
 	[a) Diagrama del Proceso Actual – Diagrama de actividades](#heading=h.7lj19pswwxxu)
 
+	![Diagrama del Proceso Actual](media/Diagrama_del_Proceso_Actual.png)
+
 ![][image3]
 
 	[b) Diagrama del Proceso Propuesto – Diagrama de actividades Inicial](#heading=h.7lj19pswwxxu)
