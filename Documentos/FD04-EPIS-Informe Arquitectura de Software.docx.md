@@ -170,7 +170,7 @@ El documento se organiza en las siguientes secciones:
 
    1. Priorización de requerimientos
 
-      1. ### Requerimientos Funcionales {#requerimientos-funcionales}
+1. ### Requerimientos Funcionales {#requerimientos-funcionales}
 
 | ID | Nombre del Requisito | Descripción de Requisito | Prioridad |
 | ----- | ----- | ----- | ----- |
@@ -180,7 +180,7 @@ El documento se organiza en las siguientes secciones:
 | RF04 | Gráfico de pie por medio de comunicación | Presentar la distribución de accidentes según el medio que reportó la noticia. | Media |
 | RF05 | Mapa interactivo | Visualizar los puntos geográficos de accidentes en un mapa dinámico con zoom. | Alta |
 
-      2. ### Requerimientos No Funcionales – Atributos de Calidad {#requerimientos-no-funcionales-–-atributos-de-calidad}
+2. ### Requerimientos No Funcionales – Atributos de Calidad {#requerimientos-no-funcionales-–-atributos-de-calidad}
 
 | ID | Nombre del Requisito | Descripción de Requisito | Prioridad |
 | ----- | ----- | ----- | ----- |
@@ -228,7 +228,7 @@ Disponibilidad de datos:
    
 
       3. ### Diagramas de Casos de uso {#diagramas-de-casos-de-uso}
-
+![Diagrama de Casos de Uso](../media/casosdeuso.png)
    
 
 ![][image2]
@@ -239,7 +239,7 @@ Disponibilidad de datos:
 
    1. ### Diagrama de Subsistemas (paquetes) {#diagrama-de-subsistemas-(paquetes)}
 
-   *![][image3]*
+![Diagrama de subsistema](../media/subsistemas.png)
 
    
 
@@ -247,63 +247,51 @@ Disponibilidad de datos:
 
    
 
-     D[iagrama de Secuencia](https://docs.google.com/document/d/10htZbaW2qHsqqUaYwSwMpWSmmQsyCruR/edit#heading=h.7lj19pswwxxu) del CUS Recolectar noticias locales
+Diagrama de Secuencia del CUS Recolectar noticias locales
+![](../media/DSrecolectarnoticias.png)
 
-   ![][image4]	
+Diagrama de Secuencia del CUS Almacenar datos estructurados
 
-      D[iagrama de Secuencia](https://docs.google.com/document/d/10htZbaW2qHsqqUaYwSwMpWSmmQsyCruR/edit#heading=h.7lj19pswwxxu) del CUS Almacenar datos estructurados
+![](../media/DSalmacenardatos.png)
 
-      ![][image5]
+Diagrama de Secuencia del CUS Recuento de accidentes por ubicación
 
-      D[iagrama de Secuencia](https://docs.google.com/document/d/10htZbaW2qHsqqUaYwSwMpWSmmQsyCruR/edit#heading=h.7lj19pswwxxu) del CUS Recuento de accidentes por ubicación
+![](../media/DSrecuentodeaccidentes.png)
 
-      ![][image6]
+Diagrama de Secuencia del CUS Gráfico de pie por medio de comunicación
 
-      
+![](../media/DSgraficopie.png)
 
-      D[iagrama de Secuencia](https://docs.google.com/document/d/10htZbaW2qHsqqUaYwSwMpWSmmQsyCruR/edit#heading=h.7lj19pswwxxu) del CUS Gráfico de pie por medio de comunicación
+Diagrama de Secuencia del CUS Mapa interactivo
 
-      ![][image7]
-
-   
-
-      3. ### Diagrama de Colaboración (vista de diseño) {#diagrama-de-colaboración-(vista-de-diseño)}
-
-   
-
-   ![][image8]
+![](../media/DSmapaintercativo.png)
 
       4. ### Diagrama de Objetos {#diagrama-de-objetos}
 
-   
+Diagrama de objetos del CUS Recolectar noticias locales
 
-   Diagrama de objetos del CUS Recolectar noticias locales
+![Diagrama de objetos del CUS Recolectar noticias locales](../media/DOrecolectarnoticias.png)
 
-   ![][image9]
+Diagrama de objetos del CUS Almacenar datos estructurados
 
-   Diagrama de objetos del CUS Almacenar datos estructurados
+![](../media/DOalmacenardatos.png)
 
-   ![][image10]
+Diagrama de objetos del CUS Recuento de accidentes por ubicación
 
-   Diagrama de objetos del CUS Recuento de accidentes por ubicación
+![](../media/DOrecuentoaccidentes.png)
 
-   ![][image11]
+Diagrama de objetos del CUS Gráfico de pie por medio de comunicación
 
-   Diagrama de objetos del CUS Gráfico de pie por medio de comunicación
+![](../media/DOgraficopie.png)
 
-   ![][image12]
+Diagrama de objetos del CUS Mapa interactivo
 
-   
-
-   Diagrama de objetos del CUS Mapa interactivo
-
-![][image13]
+![](../media/DOmapainteractivo.png)
 
 5. ### Diagrama de Clases {#diagrama-de-clases}
 
-   
+![](../media/diagramaclases.png)
 
-![][image14]
 
 6. ### Diagrama de Base de datos (relacional o no relacional) {#diagrama-de-base-de-datos-(relacional-o-no-relacional)}
 
@@ -312,34 +300,31 @@ Disponibilidad de datos:
       1. ### Diagrama de arquitectura software (paquetes) {#diagrama-de-arquitectura-software-(paquetes)}
 
    
+![](../media/arquitectura.png)
 
-   ![][image15]
 
    
 
       2. ### Diagrama de arquitectura del sistema (Diagrama de componentes) {#diagrama-de-arquitectura-del-sistema-(diagrama-de-componentes)}
 
-   
+![](../media/componentes.png)
 
-   
 
-   ![][image16]
-
-   4. Vista de procesos
+   1. Vista de procesos
 
       1. ### Diagrama de Procesos del sistema (diagrama de actividad) {#diagrama-de-procesos-del-sistema-(diagrama-de-actividad)}
+   
+![](../media/actividad.png)
 
-![][image17]
-
-5. Vista de Despliegue (vista física)
+1. Vista de Despliegue (vista física)
 
    
 
    1. ### Diagrama de despliegue {#diagrama-de-despliegue}
 
    
+![](../media/despliege.png)
 
-   *![][image18]*
 
    
 
