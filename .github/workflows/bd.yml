@@ -1,11 +1,11 @@
 name: Construcción infrastructura en Azure
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'infra/**'
-      - '.github/workflows/bd.yml'
+  # push:
+  #   branches: [ "main" ]
+  #   paths:
+  #     - 'infra/**'
+  #     - '.github/workflows/bd.yml'
   workflow_dispatch:
 
 jobs:
