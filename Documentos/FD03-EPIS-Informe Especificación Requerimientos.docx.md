@@ -163,9 +163,9 @@ Nuestra misión en CAPICODEX es desarrollar plataformas digitales que optimicen 
 
 	
 
-	## 4. Organigrama
+## 4. Organigrama
 
-	![Organigrama](../media/organigrama.png)
+![Organigrama](../media/organigrama.png)
 
 
 
