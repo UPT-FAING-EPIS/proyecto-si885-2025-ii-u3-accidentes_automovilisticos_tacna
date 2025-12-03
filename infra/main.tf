@@ -11,7 +11,7 @@ resource "azurerm_resource_group" "rg_db" {
 
 # Azure SQL Server
 resource "azurerm_mssql_server" "sql" {
-  name                         = "upt-incidentes-tacna"
+  name                         = "upt-incidentes-tacna-2025"
   resource_group_name          = azurerm_resource_group.rg_db.name
   location                     = azurerm_resource_group.rg_db.location
   version                      = "12.0"
