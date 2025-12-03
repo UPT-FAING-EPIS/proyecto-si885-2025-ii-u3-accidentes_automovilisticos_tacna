@@ -24,8 +24,8 @@ graph TB
     subgraph "Azure Subscription"
         subgraph "Resource Group: upt-incidentes-tacna"
             subgraph "Brazil South Region"
-                SQL[("Azure SQL Server<br/>upt-incidentes-tacna<br/>🆓 Serverless Gen5")]
-                DB[("SQL Database<br/>incidentestacna<br/>32GB Free Tier")]
+                SQL[("Azure SQL Server<br/>upt-incidentes-tacna<br/>Standard/Basic Tier")]
+                DB[("SQL Database<br/>incidentestacna<br/>2GB Basic Tier")]
                 FW["Firewall Rule<br/>PublicAccess"]
                 
                 SQL --> DB
@@ -63,22 +63,21 @@ graph TB
 - **Firewall:** Acceso público (0.0.0.0-255.255.255.255)
 
 ### Database: `incidentestacna`
-- **SKU:** GP_S_Gen5_2 (🆓 **Tier Gratuito Serverless**)
-- **vCores:** 0.5 - 2 (escalado automático)
-- **Almacenamiento:** 32GB incluidos gratis
-- **Auto-pause:** Después de 60 minutos sin uso
+- **SKU:** Basic (💰 **Tier Básico Económico**)
+- **DTUs:** 5 DTUs
+- **Almacenamiento:** 2GB incluidos
 - **Propósito:** Almacenar noticias de incidentes y accidentes en Tacna
 
-## 💰 Costos (Tier Gratuito)
+## 💰 Costos (Tier Básico)
 
-- **100,000 vCore segundos/mes gratis** (~35 horas de uso continuo)
-- **32GB de datos incluidos**
-- **32GB de backup storage incluidos**
-- **Costo adicional:** $0 dentro de los límites gratuitos
+- **Costo estimado:** ~$5.00 USD / mes
+- **Modelo:** DTU (Database Transaction Units)
+- **Almacenamiento:** 2GB incluidos
+- **Backup:** 7 días de retención incluidos
 
 ## Estado de la Infraestructura
 
-✅ **Infraestructura desplegada exitosamente con tier GRATUITO**
+✅ **Infraestructura desplegada exitosamente con tier BÁSICO**
 
 ### Próximos Pasos
 1. ⏳ Ejecutar workflow de carga de datos por separado
