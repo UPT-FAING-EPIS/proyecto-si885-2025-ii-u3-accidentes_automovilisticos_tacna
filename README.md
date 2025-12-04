@@ -58,3 +58,6 @@ Control de versiones: GitHub
 
 - Parte 1: https://youtu.be/nHdiu9cg0S4?si=3DM7URnyz0XaExIV
 - Parte 2: https://www.youtube.com/watch?v=JBOgpXlD88s
+  
+## Link del Dashboard 
+- https://app.powerbi.com/reportEmbed?reportId=97862be6-ee86-4d90-83f3-b1b6c31ef79f&autoAuth=true&ctid=b6b466ee-468d-4011-b9fc-fbdcf82ac90a
