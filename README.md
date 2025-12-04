@@ -56,5 +56,5 @@ Control de versiones: GitHub
 
 ## Reacciones de usuarios 
 
-- Parte 1: https://www.youtube.com/watch?v=vuAEfKv0Y-g
+- Parte 1: https://youtu.be/nHdiu9cg0S4?si=3DM7URnyz0XaExIV
 - Parte 2: https://www.youtube.com/watch?v=JBOgpXlD88s
