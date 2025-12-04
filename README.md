@@ -49,5 +49,12 @@ Control de versiones: GitHub
 - Conexión a internet.
 - Navegador moderno: Chrome, Firefox o Edge.
 - Datos oficiales y fuentes locales actualizados para el dashboard.
+- 
+## Video explicativo del dashboard
 
+- https://www.youtube.com/watch?v=vuAEfKv0Y-g
 
+## Reacciones de usuarios 
+
+- Parte 1: https://www.youtube.com/watch?v=vuAEfKv0Y-g
+- Parte 2: https://www.youtube.com/watch?v=JBOgpXlD88s
